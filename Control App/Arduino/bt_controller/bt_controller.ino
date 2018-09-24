@@ -1,9 +1,10 @@
 #include <arduino.h>
+#include <SoftwareSerial.h>
 
-SoftwareSerial BT()
+SoftwareSerial BT(2,3);
 int motors_left = 11;
 int motors_right = 12;
-char BT_in = 0;
+int BT_in = [0,0,0]; //[speed,turn_direction,turn_intensity]
 bool start = false;
 
 void setup{
@@ -14,6 +15,12 @@ void setup{
 
 void loop{
     while(start){
+        if(!BT.available()){
+            delay(5000); // Stops the vehicle for 5 seconds if the bluetooth connection is lost
+        }
+        BT_in = BT.read();
+        // There are a few options here. I can either try to remember how the code from the EELE 101 cars worked, or I can try to get clever with 
+        // scheduling and do some weird sort of threading
         
     }
 }
