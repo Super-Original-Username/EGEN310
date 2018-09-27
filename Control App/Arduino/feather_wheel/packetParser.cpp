@@ -10,14 +10,14 @@ uint8_t packetbuffer[READ_BUFFERSIZE + 1];
 
 float parseFloat(uint8_t *buffer){
     float f;
-    memcpy(f, buffer, 4);
+    memcpy(&f, buffer, 4);
     return f;
 }
 
 uint8_t readPacket(BLEUart *ble_uart, uint8_t timeout){
     uint16_t origtimeout = timeout, replyidx = 0;
 
-  memset(packetbuffer, 0, READ_BUFSIZE);
+  memset(packetbuffer, 0, READ_BUFFERSIZE);
 
   while (timeout--) {
     if (replyidx >= 20) break;
@@ -54,8 +54,7 @@ uint8_t readPacket(BLEUart *ble_uart, uint8_t timeout){
 
   if (xsum != checksum) // Throws an error if the checksums don't match
   {
-    Serial.print("Checksum mismatch in packet : ");
-    printHex(packetbuffer, replyidx+1);
+    Serial.println("Checksum mismatch");
     return 0;
   }
   

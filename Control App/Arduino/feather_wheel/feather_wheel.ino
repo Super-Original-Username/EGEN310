@@ -14,9 +14,7 @@ void setup()
     Bluefruit.begin();
     Bluefruit.setTxPower(4); // This sets the transmit power to the highest setting for the bluetooth module
     Bluefruit.setName("FeatherWheel");
-
     bleuart.begin(); // Launches the low-energy uart service
-
     startAdv(); // Begins advertising for the bluetooth module
 }
 
@@ -55,6 +53,11 @@ void loop()
             Serial.println("Flipped controls");
         }
         if (complete_stop)
-            Serial.println("Movement enabled") else Serial.println("Movement Disabled")
+        {
+            Serial.println("Movement enabled");
+        }else
+        {
+            Serial.println("Movement Disabled");
+        }
     }
 }
