@@ -1,5 +1,5 @@
-/"Control App"/.vscode/*
-/"Control App"/Android/ControlApp/.idea/*
-/"Control App"/Android/ControlRe/.idea/*
+/.vscode/*
+/Android/ControlApp/.idea/*
+/Android/ControlRe/.idea/*
 __pycache__/*
 .DS_Store

@@ -52,7 +52,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QListView" name="listView"/>
+    <widget class="QListWidget" name="listWidget"/>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -73,9 +73,9 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="cancel_btn">
+      <widget class="QPushButton" name="scan_btn">
        <property name="text">
-        <string>Cancel</string>
+        <string>Scan</string>
        </property>
       </widget>
      </item>
